@@ -1,5 +1,5 @@
-docker-vault
-============
+docker-vault-server
+===================
 
 This is a [Docker][1] image based on the [Phusion Baseimage][2] image to run a [Vault][3] server for serving out secrets.
 
