@@ -3,7 +3,7 @@ docker-vault
 
 This is a [Docker][1] image based on the [Phusion Baseimage][2] image to run a [Vault][3] server for serving out secrets.
 
-[![Docker Hub](http://img.shields.io/badge/docker-hub-brightgreen.svg?style=flat)](https://registry.hub.docker.com/u/broadinstitute/vault/)
+[![Docker Hub](http://img.shields.io/badge/docker-hub-brightgreen.svg?style=flat)](https://registry.hub.docker.com/u/broadinstitute/vault/) [![](https://badge.imagelayers.io/broadinstitute/vault:0.3.1.svg)](https://imagelayers.io/?images=broadinstitute/vault:0.3.1 'Get your own badge on imagelayers.io')
 
 # Docker Image for the Hashicorp Vault server
 
