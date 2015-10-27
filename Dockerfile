@@ -10,7 +10,7 @@ RUN apt-get update && \
     wget https://dl.bintray.com/mitchellh/vault/vault_${VAULT_VERSION}_linux_amd64.zip && \
     unzip vault_${VAULT_VERSION}_linux_amd64.zip && \
     mv vault /usr/sbin/ && \
-    mkdir -p /etc/service/vault
+    mkdir -p /etc/service/vault && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
