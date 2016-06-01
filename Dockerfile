@@ -1,16 +1,22 @@
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage:0.9.18
 
-ENV VAULT_VERSION 0.3.1
+ENV VAULT_VERSION=0.4.0 \
+    DEBIAN_FRONTEND=noninteractive
 
 EXPOSE 8200
 
 RUN apt-get update && \
-    apt-get install -y wget zip && \
+    apt-get upgrade -yq && \
+    apt-get install -yq wget zip && \
     cd /tmp && \
-    wget https://dl.bintray.com/mitchellh/vault/vault_${VAULT_VERSION}_linux_amd64.zip && \
+    wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && \
+    wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS && \
+    wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS.sig && \
+    grep vault_${VAULT_VERSION}_linux_amd64.zip vault_${VAULT_VERSION}_SHA256SUMS | sha256sum -c && \
     unzip vault_${VAULT_VERSION}_linux_amd64.zip && \
     mv vault /usr/sbin/ && \
     mkdir -p /etc/service/vault && \
+    apt-get -yq autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
