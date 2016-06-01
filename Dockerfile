@@ -1,6 +1,6 @@
 FROM phusion/baseimage:0.9.18
 
-ENV VAULT_VERSION=0.5.1 \
+ENV VAULT_VERSION=0.5.2 \
     DEBIAN_FRONTEND=noninteractive
 
 EXPOSE 8200
